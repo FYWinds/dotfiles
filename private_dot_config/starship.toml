@@ -105,6 +105,7 @@ $time\
 threshold = -1
 symbol = "󰍛 "
 style = 'bold dimmed green'
+format = "$symbol[${ram}]($style)"
 disabled = false
 
 [aws]
