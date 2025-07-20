@@ -1,0 +1,7 @@
+{{ if contains "WSL2" .chezmoi.kernel.osrelease }}
+
+[edit]
+    command = "/mnt/c/Program Files/Microsoft VS Code/Code.exe"
+    args = ["--wait"]
+
+{{ end }}

@@ -130,5 +130,14 @@ alias zsh-reload='exec zsh'
 #   Chezmoi
 alias czm='chezmoi'
 
+{{ if contains "WSL2" .chezmoi.kernel.osrelease }}
+## WSL only
+# Alias
+alias cat='batcat'
+alias code="/mnt/c/Program\ Files/Microsoft\ VS\ Code/Code.exe"
+
+{{ end }}
+
 # Modify Path
 export PATH="$HOME/bin:$PATH"
+
