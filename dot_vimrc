@@ -1,0 +1,18 @@
+" Add line number
+set number
+
+" Disable compatitable for vi
+set nocompatible
+
+" Quick switch between tabs without the save question
+set hidden
+
+" Syntax highlighting
+syntax on
+
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set hlsearch "highlight search results
+set expandtab " turn tabs into spaces
+set autoindent

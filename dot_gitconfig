@@ -1,0 +1,6 @@
+[user]
+    name = FYWinds
+    email = i@windis.cn
+[credential]
+	helper = /usr/local/bin/git-credential-manager
+	credentialStore = gpg
