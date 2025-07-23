@@ -4,23 +4,30 @@
 # Ignore windows documents
 Documents
 
-
-{{ else if eq .chezmoi.os "darwin" -}}
+{{ if eq .chezmoi.os "darwin" -}}
 # MARK: macOS
 
+# end macOS
 {{ else if eq .chezmoi.os "linux" -}}
 # MARK: linux
 
 {{ if contains "WSL2" .chezmoi.kernel.osrelease }}
 # MARK: wsl2
 
+# end wsl2
 {{ end }}
-{{ else if eq .chezmoi.os "windows" -}}
+# end linux
+{{ end }}
+# end unix-like
+{{ end }}
+
+{{ if eq .chezmoi.os "windows" -}}
 # MARK: windows
 
 # Ignore unix files
 .vimrc
 .zshrc
 
+# end windows
 {{ end -}}
 # MARK: ALL sys

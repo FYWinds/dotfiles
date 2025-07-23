@@ -1,5 +1,8 @@
 {{ if or (eq .chezmoi.os "darwin") (eq .chezmoi.os "linux") -}}
-# MARK: (unix-like systems)
+# MARK: unix-like
+
+{{ if eq .chezmoi.os "darwin" -}}
+# MARK: macOS
 
 # Install Zsh plugins using git
 [".oh-my-zsh/custom/plugins/zsh-autosuggestions"]
@@ -33,17 +36,23 @@
     [".oh-my-zsh/custom/plugins/eza".clone]
         args = ["--depth", "1"]
 
-{{ else if eq .chezmoi.os "darwin" -}}
-# MARK: macOS
-
+# end macOS
 {{ else if eq .chezmoi.os "linux" -}}
 # MARK: linux
 
 {{ if contains "WSL2" .chezmoi.kernel.osrelease }}
 # MARK: wsl2
 
+# end wsl2
 {{ end }}
-{{ else if eq .chezmoi.os "windows" -}}
+# end linux
+{{ end }}
+# end unix-like
+{{ end }}
+
+{{ if eq .chezmoi.os "windows" -}}
 # MARK: windows
 
+# end windows
 {{ end -}}
+# MARK: ALL sys

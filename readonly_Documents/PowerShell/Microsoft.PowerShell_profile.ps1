@@ -31,6 +31,9 @@
 # region Aliases
 Set-Alias -Name cat -Value bat
 Set-Alias -Name czm -Value chezmoi
+function czmcd {
+    Set-Location $(chezmoi source-path)
+}
 # endregion
 
 # region sfsu | A rust implementation of scoop

@@ -1,12 +1,13 @@
 {{ if or (eq .chezmoi.os "darwin") (eq .chezmoi.os "linux") -}}
 # MARK: unix-like
 
-{{ else if eq .chezmoi.os "darwin" -}}
+{{ if eq .chezmoi.os "darwin" -}}
 # MARK: macOS
 [edit]
     command = "code"
     args = ["--wait"]
 
+# end macOS
 {{ else if eq .chezmoi.os "linux" -}}
 # MARK: linux
 
@@ -16,9 +17,19 @@
     command = "/mnt/c/Program Files/Microsoft VS Code/bin/code"
     args = ["--wait"]
 
+# end wsl2
 {{ end }}
-{{ else if eq .chezmoi.os "windows" -}}
-# MARK: windows
+# end linux
+{{ end }}
+# end unix-like
+{{ end }}
 
+{{ if eq .chezmoi.os "windows" -}}
+# MARK: windows
+[edit]
+    command = "code"
+    args = ["--wait"]
+
+# end windows
 {{ end -}}
 # MARK: ALL sys
