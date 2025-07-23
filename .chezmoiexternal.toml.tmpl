@@ -1,9 +1,6 @@
 {{ if or (eq .chezmoi.os "darwin") (eq .chezmoi.os "linux") -}}
 # MARK: unix-like
 
-{{ if eq .chezmoi.os "darwin" -}}
-# MARK: macOS
-
 # Install Zsh plugins using git
 [".oh-my-zsh/custom/plugins/zsh-autosuggestions"]
     type = "git-repo"
@@ -35,6 +32,9 @@
 
     [".oh-my-zsh/custom/plugins/eza".clone]
         args = ["--depth", "1"]
+
+{{ if eq .chezmoi.os "darwin" -}}
+# MARK: macOS
 
 # end macOS
 {{ else if eq .chezmoi.os "linux" -}}
