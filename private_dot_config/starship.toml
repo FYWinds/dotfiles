@@ -85,28 +85,57 @@ $mise\
 $crystal\
 $custom\
 $sudo\
+
+$fill\
 $cmd_duration\
+$memory_usage\
+$battery\
+$time\
+
 $line_break\
+
 $jobs\
 $status\
 $os\
 $container\
 $netns\
 $shell\
+
 $character"""
 
-right_format = """
-$memory_usage\
-$battery\
-$time\
-"""
+
+[directory]
+read_only = " 󰌾"
+fish_style_pwd_dir_length = 2
 
 [memory_usage]
 threshold = -1
 symbol = "󰍛 "
-style = 'bold dimmed green'
-format = "$symbol[${ram}]($style)"
+style = 'bold green'
+format = "[$symbol${ram}]($style) "
 disabled = false
+
+[[battery.display]]
+threshold = 10
+style = 'bold red'
+[[battery.display]]
+threshold = 30
+style = 'bold yellow'
+[[battery.display]]
+threshold = 50
+style = 'bold dimmed green'
+[[battery.display]]
+threshold = 100
+style = 'bold green'
+
+[time]
+format = "[$time]($style) "
+style = 'bold white'
+time_format = "%H:%M:%S"
+disabled = false
+
+[fill]
+symbol = "…"
 
 [aws]
 symbol = "  "
@@ -137,9 +166,6 @@ symbol = " "
 
 [deno]
 symbol = " "
-
-[directory]
-read_only = " 󰌾"
 
 [docker_context]
 symbol = " "

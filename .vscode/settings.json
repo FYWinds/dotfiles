@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "*.chezmoiignore.tmpl": "plaintext",
+        "*.toml.tmpl": "toml",
+        "dot_gitconfig": "ini",
+        "dot_vimrc": "vim",
+        "dot_zshrc.tmpl": "shellscript",
+    }
+}

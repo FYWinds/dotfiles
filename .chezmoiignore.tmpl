@@ -1,24 +1,25 @@
 {{ if or (eq .chezmoi.os "darwin") (eq .chezmoi.os "linux") -}}
 # MARK: unix-like
 
+# Ignore pwsh profile
+
+
 {{ else if eq .chezmoi.os "darwin" -}}
 # MARK: macOS
-[edit]
-    command = "code"
-    args = ["--wait"]
 
 {{ else if eq .chezmoi.os "linux" -}}
 # MARK: linux
 
 {{ if contains "WSL2" .chezmoi.kernel.osrelease }}
 # MARK: wsl2
-[edit]
-    command = "/mnt/c/Program Files/Microsoft VS Code/bin/code"
-    args = ["--wait"]
 
 {{ end }}
 {{ else if eq .chezmoi.os "windows" -}}
 # MARK: windows
+
+# Ignore unix files
+.vimrc
+.zshrc
 
 {{ end -}}
 # MARK: ALL sys
