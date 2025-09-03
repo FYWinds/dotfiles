@@ -150,7 +150,7 @@ alias cat='bat'
 
 {{ end }}
 
-{{ if glob \".nvm\" }}
+{{ if glob ".nvm" }}
 # Node version manager
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
