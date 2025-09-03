@@ -134,10 +134,18 @@ alias zsh-reload='exec zsh'
 #   Chezmoi
 alias czm='chezmoi'
 
+{{ if eq .chezmoi.os "linux" -}}
 {{ if contains "WSL2" .chezmoi.kernel.osrelease }}
 # WSL only
 # Alias
 alias cat='batcat'
 alias code="/mnt/c/Program\ Files/Microsoft\ VS\ Code/bin/code"
+
+{{ end }}
+{{ end }}
+
+{{ if eq .chezmoi.os "darwin" -}}
+# MacOS
+alias cat='bat'
 
 {{ end }}
