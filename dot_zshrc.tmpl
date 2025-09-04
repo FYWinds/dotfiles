@@ -132,16 +132,25 @@ source $ZSH/oh-my-zsh.sh
 #   Common
 alias tree='tree -a -I .git'
 alias vi='vim'
+alias zsh-reload='exec zsh'
+
+#   Chezmoi
+alias czm='chezmoi'
+
+{{ if lookPath "eza" }}
+# eza
 alias ls='eza --icons --color=auto'
 alias l='eza -d .* --icons --color=auto'
 alias ll='eza -l --icons --color=auto'
 alias la='eza -ahl --icons --color=auto'
 alias lt='eza --tree --icons --color=auto'
 alias llt='eza -l --tree --icons --color=auto'
-alias zsh-reload='exec zsh'
+{{ end }}
 
-#   Chezmoi
-alias czm='chezmoi'
+{{ if lookPath "bat" }}
+# bat
+alias cat='bat'
+{{ end }}
 
 {{ if eq .chezmoi.os "linux" -}}
 {{ if contains "WSL2" .chezmoi.kernel.osrelease }}
@@ -155,7 +164,6 @@ alias code="/mnt/c/Program\ Files/Microsoft\ VS\ Code/bin/code"
 
 {{ if eq .chezmoi.os "darwin" -}}
 # MacOS
-alias cat='bat'
 
 {{ end }}
 
