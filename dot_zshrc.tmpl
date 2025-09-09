@@ -15,7 +15,10 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 {{ end }}
-
+{{ if glob ".bun/bin" }}
+# bun
+export PATH="$HOME/.bun/bin:$PATH$
+{{ end }}
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
