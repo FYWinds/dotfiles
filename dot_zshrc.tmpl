@@ -19,6 +19,10 @@ export PATH="$PNPM_HOME:$PATH"
 # bun
 export PATH="$HOME/.bun/bin:$PATH"
 {{ end }}
+# xmake
+{{ if glob ".xmake" }}
+source ~/.xmake/profile
+{{ end }}
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
