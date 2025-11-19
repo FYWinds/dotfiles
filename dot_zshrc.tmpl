@@ -158,9 +158,13 @@ alias lt='eza --tree --icons --color=auto'
 alias llt='eza -l --tree --icons --color=auto'
 {{ end }}
 
-{{ if lookPath "bat" }}
+{{ if (lookPath "bat") }}
 # bat
 alias cat='bat'
+{{ end }}
+{{ if (lookPath "batcat") }}
+# bat
+alias cat='batcat'
 {{ end }}
 
 {{ if eq .chezmoi.os "linux" -}}
