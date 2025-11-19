@@ -19,12 +19,12 @@ export PATH="$PNPM_HOME:$PATH"
 # bun
 export PATH="$HOME/.bun/bin:$PATH"
 {{ end }}
-# xmake
 {{ if glob ".xmake" }}
+# xmake
 source ~/.xmake/profile
 {{ end }}
-# homebrew
 {{ if glob "/opt/homebrew" }}
+# homebrew
 export PATH="/opt/homebrew/bin:$PATH"
 {{ end }}
 
