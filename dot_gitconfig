@@ -1,8 +1,10 @@
 [user]
     name = FYWinds
     email = i@windis.cn
-[credential]
-	helper = /usr/local/bin/git-credential-manager
-	credentialStore = gpg
+    signingkey = ~/.ssh/id_manjaro.pub
 [safe]
 	directory = *
+[gpg]
+    format = ssh
+[commit]
+    gpgsign = true
