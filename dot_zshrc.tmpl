@@ -26,6 +26,10 @@ source ~/.xmake/profile
 # homebrew
 export PATH="/opt/homebrew/bin:$PATH"
 {{ end }}
+{{ if glob "$HOME/.rd" }}
+# rancher desktop
+export PATH="$HOME/.rd/bin:$PATH"
+{{ end }}
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
