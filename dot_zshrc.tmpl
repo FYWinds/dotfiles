@@ -29,6 +29,9 @@ export PATH="/opt/homebrew/bin:$PATH"
 {{ if glob ".rd" }}
 # rancher desktop
 export PATH="$HOME/.rd/bin:$PATH"
+source <(kubectl completion zsh)
+source <(helm completion zsh)
+source <(rdctl completion zsh)
 {{ end }}
 
 # Set name of the theme to load --- if set to "random", it will
