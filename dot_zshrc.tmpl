@@ -26,7 +26,7 @@ source ~/.xmake/profile
 # homebrew
 export PATH="/opt/homebrew/bin:$PATH"
 {{ end }}
-{{ if glob "$HOME/.rd" }}
+{{ if glob ".rd" }}
 # rancher desktop
 export PATH="$HOME/.rd/bin:$PATH"
 {{ end }}
