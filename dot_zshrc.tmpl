@@ -38,6 +38,10 @@ source <(kubectl completion zsh)
 source <(helm completion zsh)
 source <(rdctl completion zsh)
 {{ end }}
+{{ if glob ".sdkman" }}
+# sdkman
+source ".sdkman/bin/sdkman-init.sh"
+{{ end }}
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
