@@ -42,6 +42,12 @@ source <(rdctl completion zsh)
 # sdkman
 source ".sdkman/bin/sdkman-init.sh"
 {{ end }}
+{{ if glob ".nvm" }}
+# Node version manager
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+{{ end }}
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
@@ -182,6 +188,12 @@ alias cat='bat'
 alias cat='batcat'
 {{ end }}
 
+{{ if (lookPath "skaffold") }}
+# skaffold
+source <(skaffold completion zsh)
+{{ end }}
+
+
 {{ if eq .chezmoi.os "linux" -}}
 {{ if contains "WSL2" .chezmoi.kernel.osrelease }}
 # WSL only
@@ -195,11 +207,4 @@ alias code="/mnt/c/Program\ Files/Microsoft\ VS\ Code/bin/code"
 {{ if eq .chezmoi.os "darwin" -}}
 # MacOS
 
-{{ end }}
-
-{{ if glob ".nvm" }}
-# Node version manager
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 {{ end }}
