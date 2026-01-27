@@ -36,18 +36,6 @@ export PATH="/opt/homebrew/bin:$PATH"
 export PATH="$HOME/.rd/bin:$PATH"
 source <(rdctl completion zsh)
 {{ end }}
-{{ if (lookPath "kubectl") }}
-# kubectl
-source <(kubectl completion zsh)
-{{ end }}
-{{ if (lookPath "helm") }}
-# helm
-source <(helm completion zsh)
-{{ end }}
-{{ if (lookPath "k3s") }}
-# k3s
-source <(k3s completion zsh)
-{{ end }}
 {{ if glob ".sdkman" }}
 # sdkman
 source ".sdkman/bin/sdkman-init.sh"
@@ -201,6 +189,22 @@ alias cat='batcat'
 {{ if (lookPath "skaffold") }}
 # skaffold
 source <(skaffold completion zsh)
+{{ end }}
+{{ if (lookPath "kubectl") }}
+# kubectl
+source <(kubectl completion zsh)
+{{ end }}
+{{ if (lookPath "helm") }}
+# helm
+source <(helm completion zsh)
+{{ end }}
+{{ if (lookPath "k3s") }}
+# k3s
+source <(k3s completion zsh)
+{{ end }}
+{{ if (lookPath "kustomize") }}
+# kustomize
+source <(kustomize completion zsh)
 {{ end }}
 
 
