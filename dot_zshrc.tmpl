@@ -206,6 +206,10 @@ source <(k3s completion zsh)
 # kustomize
 source <(kustomize completion zsh)
 {{ end }}
+{{ if (lookPath "argocd") }}
+# argocd
+source <(argocd completion zsh)
+{{ end }}
 
 
 {{ if eq .chezmoi.os "linux" -}}
