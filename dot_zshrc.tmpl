@@ -34,9 +34,19 @@ export PATH="/opt/homebrew/bin:$PATH"
 {{ if glob ".rd" }}
 # rancher desktop
 export PATH="$HOME/.rd/bin:$PATH"
-source <(kubectl completion zsh)
-source <(helm completion zsh)
 source <(rdctl completion zsh)
+{{ end }}
+{{ if (lookPath "kubectl") }}
+# kubectl
+source <(kubectl completion zsh)
+{{ end }}
+{{ if (lookPath "helm") }}
+# helm
+source <(helm completion zsh)
+{{ end }}
+{{ if (lookPath "k3s") }}
+# k3s
+source <(k3s completion zsh)
 {{ end }}
 {{ if glob ".sdkman" }}
 # sdkman
