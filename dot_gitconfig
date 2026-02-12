@@ -1,6 +1,6 @@
 [user]
     name = FYWinds
-    email = i@windis.cn
+    email = i@fywinds.com
     signingkey = ~/.ssh/id_manjaro.pub
 [safe]
 	directory = *
